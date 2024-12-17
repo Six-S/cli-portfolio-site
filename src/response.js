@@ -7,17 +7,6 @@ class Response extends Component{
         super(props)
         //help is also a legal argument, but it doesn't take any arguments.
         this.legalactions = [ 'site', 'brennan' ];
-        this.state = {
-            'authenticated': true
-        }
-    }
-
-    //Function that passes information around regarding our fake sudo command.
-    handleSudo(auth){
-        if(auth !== this.state.authenticated){
-            this.setState({'authenticated': auth});
-            this.props.sudoResponse(auth);
-        }
     }
 
     returnText(){

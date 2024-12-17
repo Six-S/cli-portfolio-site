@@ -1,5 +1,11 @@
 .prompt {
   color: greenyellow;
+  font-family: monospace;
+}
+
+.prompt-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .help-show{
@@ -10,32 +16,37 @@
   display: none;
 }
 
-.user-input{
+.user-input {
+  display: inline-block;
   font-family: monospace;
   color: white;
-  background-color: black;
-  box-shadow: none;
+  background-color: transparent;
+  caret-color: transparent;
   border: none;
   outline: none;
   margin-left: 5px;
-  height: 15px;
+  min-width: 1ch;
 }
 
 .cursor{
-  /* margin-left: 5px; */
+  display: inline-block;
   height: 15px;
   width: 8px;
   background-color: white;
+  animation: blink 1s step-end infinite;
+}
+
+/* Hide caret midway through the animation */
+@keyframes blink {
+  50% {
+      opacity: 0;
+  }
 }
 
 .cursor-wrapper{
   position: fixed;
   padding: 0;
   margin: 0;
-}
-
-.prompt-wrapper{
-  display: inline-flex;
 }
 
 .response{
@@ -58,4 +69,13 @@ a {
 
 a:hover {
   font-weight: bold;
+}
+
+.static-input {
+  color: white;
+  margin-left: 5px;
+}
+
+.input-response-pair {
+  margin-bottom: 10px;
 }

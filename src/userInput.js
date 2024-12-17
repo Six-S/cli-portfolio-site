@@ -6,16 +6,26 @@ class Input extends Component{
     constructor(props){
         super(props);
         this.state = {
-            'textWidth': 4,
-            'textLength': 0,
-            'currentUser': "user@computer:~$"
+            textWidth: 4,
+            textLength: 0,
+            currentUser: "user@computer:~$",
+            inputValue: ''
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        // Reset the input field when `action` becomes null again
+        if (this.props.action !== prevProps.action && this.props.action === null) {
+            this.setState({ inputValue: "", textWidth: 5, textLength: 0 });
         }
     }
 
     //This function handles the width of the text box.
     //We use this to simulate the block carat commonly seen in a Linux CLI enviornment.
     textInputChange(e){
-        let inputValLength = e.target.value.length;
+        const inputValLength = e.target.value.length;
+
+        this.setState({ inputValue: e.target.value });
 
         //if inputVal length is greater than our currently saved value, chars where added,
         //so increase the size of the input box.
@@ -47,6 +57,7 @@ class Input extends Component{
         if(e.key){
             if(e.key === 'Enter'){
                 this.props.returnResponse(e.target.value);
+                this.setState({ inputValue: "", textWidth: 4, textLength: 0 });
             } else if(e.key === 'ArrowUp'){
                 console.log('Up Arrow! This is gonna do something eventually.')
             } else if(e.key === 'ArrowDown'){
@@ -57,8 +68,6 @@ class Input extends Component{
 
     render(){
 
-        console.log('We are getting an action when we should not be huh?', this.props.action);
-
         return(
             <div className="prompt-wrapper">
                 <div className="prompt">user@computer:~$</div>
@@ -67,7 +76,7 @@ class Input extends Component{
                         className="user-input"
                         type="text"
                         autoFocus
-                        style={{'width': this.state.textWidth + 'px'}}
+                        size={this.state.inputValue.length || 1}
                         onChange={(e) => this.textInputChange(e)}
                         onKeyDown={(e) => this.textInputSubmit(e)}
                     >
@@ -76,9 +85,9 @@ class Input extends Component{
                     <input 
                         className="user-input"
                         type="text"
-                        value={this.props.action}
-                        readOnly
-                        style={{'width': ((this.props.action.length + 1) * 8) + 'px'}}
+                        autoFocus
+                        value={this.state.inputValue}
+                        size={this.state.inputValue.length || 1}
                         onChange={(e) => this.textInputChange(e)}
                         onKeyDown={(e) => this.textInputSubmit(e)}
                     >
