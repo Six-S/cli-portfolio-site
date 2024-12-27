@@ -61,26 +61,26 @@ function Response({ action }){
         "brennan -s": () => (
             <div>
                 <i>Languages</i><br/>
-                - **JavaScript (<i>Experienced</i>):** React, Node, TypeScript, Express, Backbone, Socket.io<br/>
-                - **PHP (<i>Experienced</i>):** Restler, Guzzle, Psalm<br/>
-                - **Python (<i>Experienced</i>):** Flask, BeautifulSoup, MicroPython<br/>
-                - **Java (<i>Familiar</i>):** Micronaut, Spring<br/>
-                - **Asterisk Dialplan (<i>Familiar</i>)**<br/>
-                - **C/C++ (<i>Familiar</i>):** STD, Arduino<br/>
-                - **Assembly (<i>Familiar</i>):** ARM, 6502<br/>
+                - <b>JavaScript (<i>Experienced</i>):</b> React, Node, TypeScript, Express, Backbone, Socket.io<br/>
+                - <b>PHP (<i>Experienced</i>):</b> Restler, Guzzle, Psalm<br/>
+                - <b>Python (<i>Experienced</i>):</b> Flask, BeautifulSoup, MicroPython<br/>
+                - <b>Java (<i>Familiar</i>):</b> Micronaut, Spring<br/>
+                - <b>Asterisk Dialplan (<i>Familiar</i>)</b><br/>
+                - <b>C/C++ (<i>Familiar</i>):</b> STD, Arduino<br/>
+                - <b>Assembly (<i>Familiar</i>):</b> ARM, 6502<br/>
                 <br/>
-                Databases<br/>
+                <i>Databases</i><br/>
                 - SQL (MySQL, PostgreSQL)<br/>
                 - MongoDB, DocumentDB<br/>
                 - LDAP (389DS, OpenLDAP)<br/>
                 <br/>
-                Tools<br/>
+                <i>Tools</i><br/>
                 - Git (GitHub, GitHub Actions, GitLab)<br/>
                 - Docker, Docker Compose<br/>
                 - Kubernetes<br/>
                 - Virtualization (VMWare, VirtualBox)<br/>
                 <br/>
-                Platforms & Infrastructure<br/>
+                <i>Platforms & Infrastructure</i><br/>
                 - MacOS<br/>
                 - Linux (Debian, Arch, Bash, Zsh)<br/>
                 - AWS – Lambda, S3, EC2, CloudFront (Familiar with IAM, RDS, SQS)<br/>
